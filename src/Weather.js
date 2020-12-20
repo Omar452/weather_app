@@ -10,6 +10,13 @@ class Weather{
         return data[0];
     }
     async getWeatherDetails(cityKey){
-        const response = await fetch(`http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=v4EVVooWoFFNObRYXntceqTJMGZHaYMp`)
+        const response = await fetch(`http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=v4EVVooWoFFNObRYXntceqTJMGZHaYMp`);
+        const data = await response.json();
+        return data[0];
+    }
+    async getDetails(city){
+        const cityDetails = await this.getCityDetails(city);
+        const weatherDetails = await this.getWeatherDetails(cityDetails.Key);
+        return {cityDetails, weatherDetails};
     }
 }
