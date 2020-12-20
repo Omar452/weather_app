@@ -9,9 +9,9 @@ const showWeather = (city) => {
         const {cityDetails, weatherDetails} = data;
         const timeImage = weatherDetails.IsDayTime ? 'src/img/day.svg' : 'src/img/night.svg';
         const html = 
-            `<div class="card">
+            `<div class="card shadow">
                 <img class="card-img-top" src="${timeImage}" alt="time image">
-                <div class="bg-white rounded-circle position-relative icon">
+                <div class="bg-white rounded-circle icon">
                     <img src="src/img/icons/${weatherDetails.WeatherIcon}.svg" alt="weather icon">
                 </div>
                 <div class="card-body">
