@@ -30,6 +30,7 @@ const showWeather = (city) => {
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const city = cityInput.value.trim();
+    localStorage.setItem('city', city);
     if(city.length >= 2){
         showWeather(city);
     }
