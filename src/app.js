@@ -21,6 +21,7 @@ const showWeather = (city) => {
                 </div>
             </div>`;
         weatherDiv.innerHTML = html;        
+        window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
     })
     .catch(error => {
         console.log(error);
