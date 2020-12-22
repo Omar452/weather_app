@@ -9,7 +9,7 @@ const showWeather = (city) => {
         const {cityDetails, weatherDetails} = data;
         const timeImage = weatherDetails.IsDayTime ? 'src/img/day.svg' : 'src/img/night.svg';
         const html = 
-            `<div class="card shadow">
+            `<div class="card shadow-lg">
                 <img class="card-img-top" src="${timeImage}" alt="time image">
                 <div class="bg-white rounded-circle icon">
                     <img src="src/img/icons/${weatherDetails.WeatherIcon}.svg" alt="weather icon">
@@ -35,6 +35,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     const city = cityInput.value.trim();
     localStorage.setItem('city', city);
+    form.reset();
     if(city.length >= 2){
         showWeather(city);
     }
